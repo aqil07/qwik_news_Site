@@ -1,0 +1,38 @@
+.navbar {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.categoryDropDown {
+  z-index: 1000;
+  cursor: pointer;
+  min-height: 0;
+  height: 1.2rem;
+}
+
+.categoryDropDown li {
+  list-style-type: none;
+  text-indent: 0.2rem;
+}
+.categoryList {
+  opacity: 0;
+}
+
+.categoryDropDown:hover .categoryList {
+  background-color: lightblue;
+  opacity: 1;
+}
+
+.categoryItem:hover{
+  background-color: rgba(7, 25, 215, 0.7);
+  color: white;
+}

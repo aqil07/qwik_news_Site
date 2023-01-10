@@ -1,0 +1,32 @@
+.articleGallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.articleCard {
+  padding: 1rem;
+  background-color: lightgrey;
+  border: 1px solid #111;
+  border-radius: 0.5rem;
+  min-height:0;
+  overflow: hidden;
+  resize: none;
+  height: 25rem;
+  max-height: 25rem;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  box-shadow: 10px 10px 10px #333;
+}
+
+.articleCard img{
+    width:15rem;
+    height:10rem;
+    font-style:italic;
+    border-radius: 1rem;
+    place-self: center;
+    box-shadow: 10px 10px 10px #333;
+    
+}
