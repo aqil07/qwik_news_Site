@@ -1,14 +1,18 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
-import Nav from '../nav/nav';
+import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
+import { CultureComponent } from '~/routes/layout';
+import {Nav} from '../nav/nav';
+import { SearchBox } from '../searchField/searchBox';
 import styles from './header.css?inline';
 
-export default component$(() => {
+export const Header = component$(({}) => {
   useStylesScoped$(styles);
 
+  
   return (
     <header>
-      
+      {/* <CultureComponent/> */}
       <Nav/>
+
       <div class='homeHeader'>
       <h1>
         Welcome to the News Site <span class="lightning">🗞️ 📰</span>

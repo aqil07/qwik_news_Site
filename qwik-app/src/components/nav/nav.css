@@ -1,8 +1,9 @@
 .navbar {
+  margin:1rem;
   background-color: lightblue;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: start;
   align-items: center;
   gap: 2rem;
@@ -35,4 +36,11 @@ a {
 .categoryItem:hover{
   background-color: rgba(7, 25, 215, 0.7);
   color: white;
+}
+
+.navbar .navSearch{
+  position: relative;
+  display: flex;
+  height:1rem
+
 }

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'NewsFont';
-  src: url('/fonts/TTF/Wilson wells.ttf') format('woff2');
+  /* src: url('/fonts/TTF/Wilson wells.ttf') format('woff2'); */
   src: url('/fonts/poynter/PoynterText Regular.ttf') format('woff2');
 }
 
@@ -11,3 +11,8 @@
   font-family: 'NewsFont';
 }
 
+.layout{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
