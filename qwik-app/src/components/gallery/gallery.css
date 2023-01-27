@@ -1,32 +1,123 @@
 .articleGallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,1fr), 1fr));
+  grid-template-rows: 1fr auto 1fr;
+  gap: 3rem;
+  /* grid-template-areas: "hd main"; */
+  /* place-content: center; */
   margin: 1rem;
 }
 
-.articleCard {
-  padding: 1rem;
-  background-color: lightgrey;
-  border: 1px solid #111;
-  border-radius: 0.5rem;
-  min-height:0;
-  overflow: hidden;
-  resize: none;
-  height: 25rem;
-  max-height: 25rem;
-  display: grid;
-  grid-template-rows: auto auto auto auto;
-  box-shadow: 10px 10px 10px #333;
+h2:is(.pageHeader){
+  text-align: center;
+  text-transform: capitalize;
+  /* grid-area: hd; */
+  /* grid-row: 1/1; */
+  /* text-orientation: upright;
+  writing-mode: vertical-lr; */
+  font-size: xx-large;
 }
 
-.articleCard img{
-    width:15rem;
-    height:10rem;
-    font-style:italic;
-    border-radius: 1rem;
-    place-self: center;
-    box-shadow: 10px 10px 10px #333;
-    
+.articleGallery .articleCard {
+  /* grid-area: main; */
+  /* grid-row: -1; */
+  padding: 1rem;
+  border: 1px solid navajowhite;
+  background-color: hsla(270, 76%, 46%, 0.006);
+  border-radius: 0.5rem;
+  min-height: 0;
+  overflow-y: scroll;
+  resize: none;
+  overflow-y: scroll;
+  margin: 0;
+  resize: none;
+  height: 100%;
+  min-height: 15rem;
+  display: grid;
+  text-align: center;
+  grid-template-columns: inherit;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  min-width: 20rem;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+  box-shadow: 10px 10px 10px #eef7bd;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  word-wrap: break-word;
+}
+.articleCard::-webkit-scrollbar {
+  /* background-color: #777; */
+  height: 10px;
+  width: 10px;
+  display: flex;
+  position: absolute;
+}
+
+.articleCard::-webkit-scrollbar-button{
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #333;
+  gap: 1rem;
+}
+
+.articleCard::-webkit-scrollbar-thumb{
+  background-color: #777
+}
+.articleCard::-webkit-scrollbar-track-piece{
+  background-color: rgba(0,0,0,0.3333);
+}
+
+.articleCard::-webkit-scrollbar-track {
+  background-color: #666;
+
+}
+
+
+.articleCard img {
+  width: 15rem;
+  height: 10rem;
+  position: relative;
+  font-style: italic;
+  border-radius: 1rem;
+  place-self: center;
+
+}
+
+::-webkit-scrollbar {
+  position: absolute;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(59, 123, 110, 0.9);
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(159, 223, 210, 0.9);
+}
+
+.articleCard h4 {
+  font-size: xx-large;
+}
+
+.articleCard p,
+a {
+  position: relative;
+  font-weight: bolder;
+  font-size: large;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  word-wrap: break-word;
+}
+
+.articleCard a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.articleCard a:hover{
+  text-decoration: none;
+  color: blue;
 }

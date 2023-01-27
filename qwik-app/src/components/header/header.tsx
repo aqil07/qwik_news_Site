@@ -1,5 +1,5 @@
 import { component$, useContext, useStylesScoped$ } from '@builder.io/qwik';
-import { CultureComponent } from '~/routes/layout';
+import { FormFilter } from '~/routes/layout';
 import {Nav} from '../nav/nav';
 import { SearchBox } from '../searchField/searchBox';
 import styles from './header.css?inline';
@@ -10,7 +10,7 @@ export const Header = component$(({}) => {
   
   return (
     <header>
-      {/* <CultureComponent/> */}
+      {/* <FormFilter/> */}
       <Nav/>
 
       <div class='homeHeader'>
