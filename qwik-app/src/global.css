@@ -31,8 +31,8 @@ html{
 
 .layout{
   padding: 0.5rem;
-  background-color: #333;
-  border: 12px solid rgba(234, 233, 233, 0.882);
+  background-color: #111;
+  border: 12px solid rgba(255, 255, 255, 0.925);
   color: rgba(234, 233, 233, 0.882);
   width: 100%;
   display: flex;
@@ -49,19 +49,15 @@ html{
 
 .filterForm{
   min-width: min-content;
-  /* width: calc(100px/8%); */
-  background-color: rgba(234, 233, 233, 0.35);
-  /* display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; */
+  background-color: rgba(82, 40, 40, 0.35);
+  border: 0.1cqw solid #f7d3d3;
+  border-radius:  0.5cqw;
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(min(50%,1fr),1fr));
-  /* grid-template-rows: 1fr; */
   margin: 1rem;
   padding: 1rem;
   gap: 1rem;
-  /* position: absolute; */
-}
+  }
 
 .hideForm{
   /* height: 1px; */

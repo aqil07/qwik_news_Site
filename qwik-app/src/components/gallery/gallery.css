@@ -56,12 +56,13 @@ h2:is(.pageHeader){
   position: absolute;
 }
 
-.articleCard::-webkit-scrollbar-button{
+/* .articleCard::-webkit-scrollbar-button{
   background-color: #fff;
+  color: black;
   border-radius: 3px;
   border: 1px solid #333;
   gap: 1rem;
-}
+} */
 
 .articleCard::-webkit-scrollbar-thumb{
   background-color: #777
