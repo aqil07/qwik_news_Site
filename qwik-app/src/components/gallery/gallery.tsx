@@ -7,27 +7,27 @@ import {
 import { useLocation } from '@builder.io/qwik-city'
 
 import { allArticlesSchema, allSourcesSchema, stateSchema } from '~/utils/utils'
-import styles from './gallery.css?inline'
+// import styles from './gallery.css?inline'
 
 export const controller = new AbortController()
 export const allArticles = new URL('https://newsapi.org/v2/everything')
 
 export const Gallery = component$(({ data }: allSourcesSchema | allArticlesSchema | any) => {
-  useStylesScoped$(styles)
+  // useStylesScoped$(styles)
   // console.log('d',data);
   const location = useLocation()
-// console.log(location);
+  // console.log(location);
 
-const pageHeader = (location.params.hasOwnProperty('catId') ? location.params.catId : location.pathname.replace('/','').replace('/',''))
+  const pageHeader = (location.params.hasOwnProperty('catId') ? location.params.catId : location.pathname.replace('/', '').replace('/', ''))
 
-// console.log(pageHeader);
+  // console.log(pageHeader);
 
 
 
   return (
     <>
-      <h2 class='pageHeader'>{pageHeader}</h2>
-      <main class="articleGallery"
+      {/* <h2 class='pageHeader'>{pageHeader}</h2> */}
+      <main class=" col justify-content-between justify-content-sm-center"
 
       >
         <Resource
@@ -63,50 +63,34 @@ const pageHeader = (location.params.hasOwnProperty('catId') ? location.params.ca
 
             return (
               <>
+
                 {
-                  dataToShow?.map((e: any) => {
+                  dataToShow?.map((e: any, index: number) => {
                     // console.log(e);
 
                     return (
-                      // <main>
-                      <article aria-label="Article Card" class="articleCard">
-                        {e.title == undefined ? <h4>{e.name}</h4> : <h4 aria-label="Article Heading">{e.title}</h4>}
-                        {e.urlToImage == null || e.urlToImage == undefined ? <span style='display:none;'></span> : <img loading='lazy' src={e.urlToImage} alt='News Cover Image' />}
-                        <p aria-label="Article Description">{e.description}</p>
-                        <p>Read more:&nbsp;
-                          <a aria-label={e.url} href={e.url}>
-                            {e.url}
-                          </a></p>
-                      </article>
+                      <div class={'row  ' + (index % 2 === 0 ? 'justify-content-start' : 'justify-content-around')}>
+                        <div class={index % 2 === 0 ? 'col-12' : 'col-10'} >
+                          <article aria-label="Article Card" class={'justify-content-start align-items-center card-body'} >
+                            {e.title == undefined ? <h4 class='card-title'>{e.name}</h4> : <h4 class='card-title' aria-label="Article Heading">{e.title}</h4>}
+                            <img class='img-fluid' loading='lazy' src={e.urlToImage} alt='News Cover Image' />
+                            <p aria-label="Article Description" class='card-text'>{e.description}</p>
+                            <p class='card-footer text-truncate'>Read more:&nbsp;
+                              <a aria-label={e.url} href={e.url}>
+                                {e.url}
+                              </a></p>
+                          </article>
+                          <hr class='bg-light'/>
+                        </div>
+                      </div>
                       // </main>
                     )
                   })
                 }
-
               </>
             )
           }}
         />
-        {
-
-          // data == null ? null : data.map((e: any) => {
-          //   // console.log(e);
-
-          //   return (
-          //     // <main>
-          //     <article aria-label="Article Card" class="articleCard">
-          //       <h4 aria-label="Article Heading">{e.title}</h4>
-          //       <img loading='lazy' src={e.urlToImage} alt='News Cover Image' />
-          //       <p aria-label="Article Description">{e.description}</p>
-          //       <p>Read more:&nbsp;
-          //         <a aria-label={e.url} href={e.url}>
-          //           {e.url}
-          //         </a></p>
-          //     </article>
-          //     // </main>
-          //   )
-          // })
-        }
       </main>
     </>
   )

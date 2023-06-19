@@ -16,7 +16,7 @@ export const allArticles = new URL('https://newsapi.org/v2/everything')
 
 export default component$(() => {
   const loc = useLocation()
-// console.log(loc.query.cultureList);
+  // console.log(loc.query.cultureList);
 
 
   const urlState: stateSchema | any = useContext(myUrlCtx);
@@ -24,10 +24,10 @@ export default component$(() => {
     id: loc.href
   })
 
-  allArticles.searchParams.set('language',loc.query.cultureList == undefined ? 'en' : loc.query.cultureList)
+  allArticles.searchParams.set('language', loc.query.cultureList == undefined ? 'en' : loc.query.cultureList)
   loc.query.countryList == 'none' || loc.query.countryList == undefined ? allArticles.searchParams.delete('country') : allArticles.searchParams.set('country', loc.query.countryList)
-  allArticles.searchParams.set('pageSize',loc.query.resultsCount == undefined ? Math.min(10).toString() : loc.query.resultsCount)
-  allArticles.searchParams.set('page',loc.query.pageNumber == undefined ? Math.min(1).toString() : loc.query.pageNumber)
+  allArticles.searchParams.set('pageSize', loc.query.resultsCount == undefined ? Math.min(10).toString() : loc.query.resultsCount)
+  allArticles.searchParams.set('page', loc.query.pageNumber == undefined ? Math.min(1).toString() : loc.query.pageNumber)
   allArticles.searchParams.set('domains', 'bbc.co.uk, techcrunch.com, engadget.com')
 
   // useClientEffect$(() => {
@@ -43,7 +43,7 @@ export default component$(() => {
   //   })
   // },{eagerness:'load'})
   // console.log('u',allArticles);
-  
+
 
   const newsResource = useResource$<allArticlesSchema | stateSchema | any>(async ({ track, cleanup }) => {
 
@@ -60,7 +60,10 @@ export default component$(() => {
   useStyles$(styles)
   return (
     <>
-      <Gallery data={newsResource.value} />
+      <div class='home'>
+
+      </div>
+      {/* <Gallery data={newsResource.value} /> */}
 
     </>
   );

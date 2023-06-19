@@ -58,7 +58,7 @@ export default component$(() => {
     useStyles$(styles)
     return (
         <div class='layout'>
-            <FormFilter />
+            {/* <FormFilter /> */}
             <Header />
             <main>
                 <Slot />
@@ -101,9 +101,9 @@ export const FormFilter = component$(() => {
 // console.log(cultureState.values);
 
     return <>
-        <button onClick$={() => {
-            showForm.value = !showForm.value
-            // console.log(showForm.value);
+        <button onClick$={(e) => {
+            // showForm.value = !showForm.value
+            console.log(showForm.value);
 
         }} class='formToggle'>{!showForm.value ? '-' : '+'}</button>
         <form id='form' aria-label='Form to Filter Article Results' class={!showForm.value ? 'filterForm' : 'hideForm'} >

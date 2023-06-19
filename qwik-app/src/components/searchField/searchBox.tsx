@@ -4,7 +4,7 @@ export const SearchBox = component$(()=>{
     let searchInput
     useStyles$(styles)
     return(
-        <section class='search_input' aria-labelledby="searchField">
+        <section class='search_input activeInput' aria-labelledby="searchField">
         {/* <input type='text' id='searchField' onChange$={(e)=>{
             searchInput = e.target.value
 
